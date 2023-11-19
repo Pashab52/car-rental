@@ -5,6 +5,7 @@ const Home = lazy(() => import("./pages/Home"));
 const Cars = lazy(() => import("./pages/Cars"));
 const FavoriteCars = lazy(() => import("./pages/FaviriteCars"));
 
+
 function App() {
   return (
     <div className="App">
