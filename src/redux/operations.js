@@ -8,11 +8,11 @@ axios.defaults.baseURL =
 
 export const fetchCars = createAsyncThunk(
   "cars/fetchCars",
-  async (_, thunkAPI) => {
+  async (page, thunkAPI) => {
     try {
       const response = await axios.get("/adverts", {
         params: {
-          page: 1,
+          page: page,
           limit: 12,
         }
       })

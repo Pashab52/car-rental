@@ -1,0 +1,123 @@
+
+.image {
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.buttonClose {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    top: 3%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    border: none;
+
+}
+
+.iconClose {
+    width: 24px;
+    height: 24px;
+    color: rgba(18, 20, 23, 1);
+}
+
+.containerCard {
+    padding: 40px;
+}
+
+.titleCard {
+    color: rgba(18, 20, 23, 1);
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 500;
+    margin-top: 14px;
+}
+
+.titleAccent {
+    color: rgba(52, 112, 255, 1);
+}
+
+.containerLocation {
+    display: flex;
+}
+
+.listLocation {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.itemLocation {
+    color: rgba(18, 20, 23, 0.5);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(18, 20, 23, 0.5);
+    padding-right: 6px;
+}
+
+.containerDescription {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(18, 20, 23, 1);
+    line-height: calc(20/14);
+}
+
+.containerFunc {
+    margin-top: 24px;
+}
+
+.titleFunc {
+    font-size: 14px;
+    line-height: calc(20/14);
+    font-weight: 500;
+    color: rgba(18, 20, 23, 1);
+}
+
+.listAcces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.itemAcces {
+    display: flex;
+    flex-wrap: nowrap;
+    color: rgba(18, 20, 23, 0.5);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: rgba(18, 20, 23, 0.5);
+    padding-right: 6px;
+    text-wrap: nowrap;
+}
+
+.listRental {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.itemRental {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: rgba(249, 249, 249, 1);
+    padding: 7px 14px;
+    border-radius: 35px;
+}
+
+.itemAccent {
+    color: rgba(52, 112, 255, 1);
+}
+
+.linkModal {
+    display: inline-block;
+    background-color: rgba(52, 112, 255, 1);
+    color: rgba(255, 255, 255, 1);
+    border-radius: 12px;
+    padding: 12px 50px;
+    margin-top: 24px;
+    text-align: center;
+}

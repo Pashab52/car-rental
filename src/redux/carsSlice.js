@@ -41,7 +41,10 @@ const carsSlice = createSlice({
       .addCase(fetchCars.fulfilled, (state, action) => {
         handleFulfilled(state);
 
-        state.cars.items = [...action.payload];
+        state.cars.items = [
+          ...state.cars.items,
+          ...action.payload
+        ];
       })
 
       .addMatcher(isAnyOf(fetchCars.pending), handlePending)

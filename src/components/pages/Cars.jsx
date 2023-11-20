@@ -1,24 +1,35 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { selectError, selectIsLoading } from "../../redux/selectors";
-import { useEffect } from "react";
+// import { selectError, selectIsLoading } from "../../redux/selectors";
+import { useEffect, useState } from "react";
 import { fetchCars } from "../../redux/operations";
-import {CarsList} from '../CarsList/CarsList'
+import { CarsList } from '../CarsList/CarsList';
 
 const Cars = () => {
+  const [currentPage, setCurrentPage] = useState(1);
   const dispatch = useDispatch();
-
+//  const isLoading = useSelector(selectIsLoading);
 
 
   useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
+    dispatch(fetchCars(currentPage));
+  }, [currentPage, dispatch]);
+
+  function setPage() {
+  setCurrentPage(currentPage+1)
+  }
+  
+   
 
   return (
-    <div className="homeWrap">
-      <h1>Cars</h1>
-      <CarsList/>
-    </div>
+    <>
+      <div className="homeWrap">
+        <CarsList
+          setPage={setPage}
+        />
+      </div>
+      
+    </>
   );
 };
 
