@@ -2,7 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 // import { selectError, selectIsLoading } from "../../redux/selectors";
 import { useEffect, useState } from "react";
-import { fetchCars } from "../../redux/operations";
+import {
+  fetchCars,
+} from "../../redux/operations";
+
 import { CarsList } from '../CarsList/CarsList';
 
 const Cars = () => {
@@ -13,14 +16,17 @@ const Cars = () => {
 
   useEffect(() => {
     dispatch(fetchCars(currentPage));
+  
   }, [currentPage, dispatch]);
 
+
+
+
   function setPage() {
-  setCurrentPage(currentPage+1)
+    setCurrentPage(currentPage + 1)
+
   }
   
-   
-
   return (
     <>
       <div className="homeWrap">

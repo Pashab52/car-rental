@@ -6,6 +6,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 import { store, persistor } from "./redux/store";
+import { PersistGate } from 'redux-persist/integration/react';
 // ReactDOM.createRoot(document.getElementById("root")).render(
 //   <React.StrictMode>
 
@@ -18,11 +19,13 @@ import { store, persistor } from "./redux/store";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-<Provider store={store}>
-      <BrowserRouter basename="/car-rental">
-        <App />
-      </BrowserRouter>
-    </Provider>
+  <Provider store={store}>
+    <BrowserRouter basename="/car-rental">
+      <PersistGate loading={null} persistor={persistor}>
+      <App />
+      </PersistGate>
+    </BrowserRouter>
+  </Provider>
   // </React.StrictMode>
 );
 

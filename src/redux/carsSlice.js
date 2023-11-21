@@ -40,20 +40,12 @@ const carsSlice = createSlice({
         action.payload,
       ];
     },
-    delFavorite(state, action) {
-      console.log(
-        state.favoriteCars.findIndex(
-          (favorite) => favorite.id === action.payload.id
-        )
-      );
-      state.favoriteCars.splice(
-            state.favoriteCars.findIndex((favorite) => favorite.id === action.payload.id),
-            1
-          )
 
-      // state.favoriteCars = [...state.favoriteCars];
-    },
+    delFavorite(state, action) {
+      state.favoriteCars.splice(state.favoriteCars.findIndex((favorite) => favorite.id === action.payload.id),1)},
   },
+
+
   extraReducers: (builder) => {
     builder
 
@@ -74,7 +66,10 @@ const carsSlice = createSlice({
   },
 });
 
-export const { setFilter, addFavorite, delFavorite } =
-  carsSlice.actions;
+export const {
+  setFilter,
+  addFavorite,
+  delFavorite,
+} = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
 

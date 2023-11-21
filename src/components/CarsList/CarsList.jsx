@@ -12,7 +12,7 @@ import { Loader } from "../Loader/Loader";
 export function CarsList({ setPage }) {
   const carsData = useSelector(selectCars);
   const isLoading = useSelector(selectIsLoading);
-  const [carsDataLength, setCarsDataLength] = useState([]);
+  const [carsDataLength, setCarsDataLength] = useState(0);
 
   function onBtnClick() {
     setPage();
