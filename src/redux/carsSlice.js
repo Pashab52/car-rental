@@ -7,10 +7,9 @@ const carsInitialState = {
     isLoading: false,
     error: null,
   },
+  favoriteCars: [],
   filter: "",
 };
-
- 
 
 const handlePending = state => {
   state.cars.isLoading = true;
@@ -33,8 +32,28 @@ const carsSlice = createSlice({
     setFilter(state, action) {
       state.filter = action.payload;
     },
-  },
 
+    addFavorite(state, action) {
+ 
+      state.favoriteCars = [
+        ...state.favoriteCars,
+        action.payload,
+      ];
+    },
+    delFavorite(state, action) {
+      console.log(
+        state.favoriteCars.findIndex(
+          (favorite) => favorite.id === action.payload.id
+        )
+      );
+      state.favoriteCars.splice(
+            state.favoriteCars.findIndex((favorite) => favorite.id === action.payload.id),
+            1
+          )
+
+      // state.favoriteCars = [...state.favoriteCars];
+    },
+  },
   extraReducers: (builder) => {
     builder
 
@@ -43,7 +62,7 @@ const carsSlice = createSlice({
 
         state.cars.items = [
           ...state.cars.items,
-          ...action.payload
+          ...action.payload,
         ];
       })
 
@@ -55,6 +74,7 @@ const carsSlice = createSlice({
   },
 });
 
-export const { setFilter } = carsSlice.actions;
+export const { setFilter, addFavorite, delFavorite } =
+  carsSlice.actions;
 export const carsReducer = carsSlice.reducer;
 
