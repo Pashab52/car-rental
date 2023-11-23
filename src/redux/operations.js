@@ -14,8 +14,10 @@ export const fetchCars = createAsyncThunk(
         params: {
           page: page,
           limit: 12,
-        }
-      })
+          // filter: "Volvo"&"2007",
+          // sortBy: "year",
+        },
+      });
 
       
 

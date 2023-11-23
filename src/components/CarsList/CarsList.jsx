@@ -1,7 +1,7 @@
 
 import { CarsItem } from "../CarsItem/CarsItem";
 import css from "./CarsList.module.css";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   selectCars,
   selectIsLoading,
@@ -9,14 +9,20 @@ import {
 import { useState } from "react";
 import { Loader } from "../Loader/Loader";
 
-export function CarsList({ setPage }) {
+import { fetchCars } from "../../redux/operations";
+
+export function CarsList() {
   const carsData = useSelector(selectCars);
   const isLoading = useSelector(selectIsLoading);
   const [carsDataLength, setCarsDataLength] = useState(0);
+  const [currentPage, setCurrentPage] = useState(2);
+  const dispatch = useDispatch();
+
 
   function onBtnClick() {
-    setPage();
+    setCurrentPage(currentPage + 1);
     setCarsDataLength(carsData.length);
+    dispatch(fetchCars(currentPage));
   }
 
   return (
@@ -41,7 +47,7 @@ export function CarsList({ setPage }) {
           onClick={() => {
             onBtnClick();
           }}
-          disabled={carsDataLength === carsData.length}
+          disabled={carsData.length < 12}
         >
           Load more
         </button>
