@@ -8,7 +8,7 @@ const carsInitialState = {
     error: null,
   },
   favoriteCars: [],
-  filter: "",
+  filter: [],
 };
 
 const handlePending = state => {

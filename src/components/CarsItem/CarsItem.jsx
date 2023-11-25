@@ -22,20 +22,6 @@ export function CarsItem({ car }) {
     setShowModal(false);
     };
 
-//     const handleFavBtn = () => {
-// const delCar = favCarsData.find((favCar) => favCar.id === car.id);
-
-//       if (delCar) {
-//         dispatch(delFavorite(delCar));
-//         return;
-//       }
-
-      //   const handleFavBtn = () => {
-      //       if (favCarsData.find((favCar) => favCar.id === car.id)) {
-
-      //        dispatch(delFavorite(favCar));
-      //         return
-      //     }
 
       const handleFavBtn = () => {
           console.log(favCarsData);
@@ -43,16 +29,7 @@ export function CarsItem({ car }) {
               dispatch(addFavorite(car))
               return
           }
-
-      //         let newData = [...favCarsData];
-      //         console.log(newData)
-      // console.log(newData.indexOf(car));
-      // console.log(newData.splice(2, 1));
-      // state.favoriteCars.splice(
-      //   state.favoriteCars.indexOf(action.payload),
-      //   1
-          // );
-          
+         
 console.log(favCarsData.indexOf(car));
 
       dispatch(delFavorite(car));
