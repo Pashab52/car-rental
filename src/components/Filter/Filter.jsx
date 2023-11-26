@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { carMakers } from "./carMakers";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setFilter } from "../../redux/carsSlice";
+import { selectFilterCars } from "../../redux/selectors";
+import { fetchCars } from "../../redux/operations";
+
 
 export function Filter() {
   const dispatch = useDispatch();
-  const [makers, setMakers] = useState("");
-  const [price, setPrice] = useState("");
+  const [maker, setMaker] = useState('');
+  const [price, setPrice] = useState("500");
+
+
+
 
   const priceArr = [];
   for (let i = 10; i <= 500; i += 10) {
@@ -16,7 +22,7 @@ export function Filter() {
   const handleSelectChange = (event) => {
     switch (event.currentTarget.name) {
       case "makers":
-        setMakers(event.currentTarget.value);
+        setMaker(event.currentTarget.value);
         break;
 
       case "price":
@@ -31,7 +37,7 @@ export function Filter() {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    dispatch(setFilter([makers, price]));
+    dispatch(setFilter([maker, price]));
   };
 
   return (
@@ -48,6 +54,7 @@ export function Filter() {
             <option value="start" hidden>
               Enter the text
             </option>
+            <option value=''>All cars</option>
             {carMakers.map((maker) => (
               <option key={maker} value={maker}>
                 {maker}
@@ -67,7 +74,7 @@ export function Filter() {
             <option value="$" hidden>
               To $
             </option>
-
+            <option value="500">All price</option>
             {priceArr.map((price) => (
               <option key={price} value={price}>
                 ${price}

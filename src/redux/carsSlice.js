@@ -42,7 +42,9 @@ const carsSlice = createSlice({
     },
 
     delFavorite(state, action) {
-      state.favoriteCars.splice(state.favoriteCars.findIndex((favorite) => favorite.id === action.payload.id),1)},
+      state.favoriteCars.splice(action.payload, 1)
+    },
+    // state.favoriteCars.splice(state.favoriteCars.findIndex((favorite) => favorite.id === action.payload.id),1)},
   },
 
 

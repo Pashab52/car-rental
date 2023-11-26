@@ -7,12 +7,12 @@ import { ModalData } from "../ModalData/ModalData";
 import {
   addFavorite,
   delFavorite,
-} from "../../redux/carsSlice"; 
-import {selectFavCars} from '../../redux/selectors'
+} from "../../redux/carsSlice";
+import { selectFavCars } from "../../redux/selectors";
 
 export function CarsItem({ car }) {
-    const dispatch = useDispatch();
-    const favCarsData = useSelector(selectFavCars);
+  const dispatch = useDispatch();
+  const favCarsData = useSelector(selectFavCars);
   const [showModal, setShowModal] = useState(false);
   const handleModalClick = () => {
     setShowModal(true);
@@ -20,21 +20,21 @@ export function CarsItem({ car }) {
 
   const closeModal = () => {
     setShowModal(false);
-    };
+  };
 
+  const handleFavBtn = () => {
+    if (
+      !favCarsData.find((favCar) => favCar.id === car.id)
+    ) {
+      dispatch(addFavorite(car));
+      return;
+    }
+const favCarIdx = favCarsData.findIndex(
+  (favorite) => favorite.id === car.id
+    );
+    dispatch(delFavorite(favCarIdx));
+  };
 
-      const handleFavBtn = () => {
-          console.log(favCarsData);
-          if (!favCarsData.includes(car)) {
-              dispatch(addFavorite(car))
-              return
-          }
-         
-console.log(favCarsData.indexOf(car));
-
-      dispatch(delFavorite(car));
-    };
-    
   return (
     <>
       <li className={css.contactItem}>

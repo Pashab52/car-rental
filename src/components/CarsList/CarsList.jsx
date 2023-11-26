@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   selectCars,
   selectIsLoading,
+  selectFilterCars,
 } from "../../redux/selectors";
 import { useState } from "react";
 import { Loader } from "../Loader/Loader";
@@ -14,11 +15,14 @@ import { fetchCars } from "../../redux/operations";
 export function CarsList() {
   const carsData = useSelector(selectCars);
   const isLoading = useSelector(selectIsLoading);
+  const filterCarsData = useSelector(selectFilterCars);
   const [carsDataLength, setCarsDataLength] = useState(0);
   const [currentPage, setCurrentPage] = useState(2);
   const dispatch = useDispatch();
 
+console.log(filterCarsData);
 
+  
   function onBtnClick() {
     setCurrentPage(currentPage + 1);
     setCarsDataLength(carsData.length);
@@ -28,15 +32,8 @@ export function CarsList() {
   return (
     <>
       <ul className={css.carsList}>
-        {carsData.map((car) => {
-          
-          return (
-            <CarsItem
-              key={car.id}
-              car={car}
-            
-            />
-          );
+        {filterCarsData.map((car) => {
+          return <CarsItem key={car.id} car={car} />;
         })}
       </ul>
       {isLoading ? (
