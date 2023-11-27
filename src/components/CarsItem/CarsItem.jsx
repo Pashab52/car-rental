@@ -38,10 +38,9 @@ const favCarIdx = favCarsData.findIndex(
   return (
     <>
       <li className={css.contactItem}>
-        <div className="movie-search-poster-wrap">
+        <div>
           {car.img ? (
             <img
-              className="movie-search-poster"
               src={car.img}
               onError={(event) =>
                 (event.target.src = carPhoto)
@@ -52,7 +51,6 @@ const favCarIdx = favCarsData.findIndex(
             />
           ) : (
             <img
-              className="movie-search-poster"
               src={carPhoto}
               alt={car.model}
               width="274px"
@@ -64,19 +62,19 @@ const favCarIdx = favCarsData.findIndex(
           </button>
         </div>
 
-        <div className="movie-txt-wrap">
-          <p className="movie-txt">{car.make}</p>
-          <p className="movie-txt">{car.model}</p>
-          <p className="movie-txt">{car.year}</p>
-          <p className="movie-txt">{car.rentalPrice}</p>
+        <div >
+          <p >{car.make}</p>
+          <p >{car.model}</p>
+          <p >{car.year}</p>
+          <p >{car.rentalPrice}</p>
         </div>
         <div>
-          <p className="movie-txt">{car.adress}</p>
-          <p className="movie-txt">{car.rentalCompany}</p>
-          <p className="movie-txt">{car.type}</p>
-          <p className="movie-txt">{car.model}</p>
-          <p className="movie-txt">{car.mileage}</p>
-          <p className="movie-txt">
+          <p >{car.adress}</p>
+          <p >{car.rentalCompany}</p>
+          <p >{car.type}</p>
+          <p >{car.model}</p>
+          <p >{car.mileage}</p>
+          <p >
             {car.functionalities[0]}
           </p>
         </div>
