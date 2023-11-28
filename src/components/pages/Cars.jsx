@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-// import css from "
+import css from './Cars.module.css'
 // import { selectError, selectIsLoading } from "../../redux/selectors";
 import { useEffect, useState } from "react";
 import {
@@ -31,11 +31,10 @@ const carsData = useSelector(selectCars);
   
   return (
     <>
-      <div className="homeWrap">
-        <Filter/>
-        <CarsList/>
+      <div className={css.carsContainer}>
+        <Filter />
+        <CarsList />
       </div>
-      
     </>
   );
 };

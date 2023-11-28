@@ -3,4 +3,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 29px;
+    margin-bottom: 30px;
+}
+.carsLoadBtn{
+    margin-bottom: 50px;
 }

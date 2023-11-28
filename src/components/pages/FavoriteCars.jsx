@@ -1,10 +1,11 @@
 import { FavCarsList } from "../FavCarsList/FavCarsList";
+import css from "./Cars.module.css";
 
 const FavoriteCars = () => {
 
   return (
-    <div className="homeWrap">
-      <FavCarsList/>
+    <div className={css.carsContainer}>
+      <FavCarsList />
     </div>
   );
 };

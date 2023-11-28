@@ -40,6 +40,7 @@ console.log(filterCarsData);
         <Loader />
       ) : (
         <button
+          className={css.carsLoadBtn}
           type="button"
           onClick={() => {
             onBtnClick();

@@ -1,6 +1,42 @@
 @import-normalize;
 /* bring in normalize.css styles */
 
+@font-face {
+  font-family: 'Manrope';
+  src: url('../src/assets/fonts/Manrope-Regular.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../src/assets/fonts/Manrope-Medium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../src/assets/fonts/Manrope-SemiBold.ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../src/assets/fonts/Manrope-Bold.ttf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('../src/assets/fonts/Manrope-ExtraBold.ttf');
+  font-weight: 800;
+  font-style: normal;
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -43,18 +79,21 @@ a {
 body {
   background-color: #f5f5f5;
   margin: 0;
-  font-family: 'DM Sans',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 0em;
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.homeWrap {
+/* .homeWrap {
   padding: 100px 10px;
 
 }
@@ -65,7 +104,7 @@ code {
   font-size: 36px;
   text-align: center;
   margin-bottom: 50px;
-}
+} */
 
 
 .active {
@@ -74,7 +113,7 @@ code {
   text-underline-offset: 5px;
 
 }
-
+/* 
 .mapWrap {
 
   margin-top: -41px;
@@ -88,4 +127,4 @@ code {
 
 .homeLink:hover {
   transform: scale(1.08);
-}
+} */
