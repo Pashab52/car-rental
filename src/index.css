@@ -77,7 +77,7 @@ a {
 }
 
 body {
-  background-color: #f5f5f5;
+  background-color: #fff;
   margin: 0;
 font-family: "Manrope", sans-serif;
   font-size: 12px;
@@ -86,7 +86,9 @@ font-family: "Manrope", sans-serif;
   letter-spacing: 0em;
 }
 
-
+.css-1u9des2-indicatorSeparator {
+  display: none;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -128,3 +130,19 @@ code {
 .homeLink:hover {
   transform: scale(1.08);
 } */
+
+.basic-single,
+.select{
+  /* width: 224px;
+    height: 48px;
+    padding: 14px 18px;
+    border-radius: 14px; */
+    border: none;
+    background-color: #F7F7FB;
+    /* font-family: "Manrope", sans-serif;
+    color: #121417;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; */
+}

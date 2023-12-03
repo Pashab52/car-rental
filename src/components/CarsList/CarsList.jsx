@@ -19,9 +19,6 @@ export function CarsList() {
   const [carsDataLength, setCarsDataLength] = useState(0);
   const [currentPage, setCurrentPage] = useState(2);
   const dispatch = useDispatch();
-
-console.log(filterCarsData);
-
   
   function onBtnClick() {
     setCurrentPage(currentPage + 1);
