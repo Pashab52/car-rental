@@ -1,6 +1,6 @@
 import { NavLink, Link} from 'react-router-dom';
 import css from "./Header.module.css";
-import carPhoto from "../img/carPhoto.png";
+import carPhoto from "../../assets/img/carPhoto.png";
 
 export const Header = () => {
   return (

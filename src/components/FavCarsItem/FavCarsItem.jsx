@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import css from "./FavCarsItem.module.css";
-import carPhoto from "../img/carPhoto.png";
+import carPhoto from "../../assets/img/carPhoto.png";
 import { Modal } from "../Modal/Modal";
 import { ModalData } from "../ModalData/ModalData";
 import {

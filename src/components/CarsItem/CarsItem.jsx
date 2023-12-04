@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { ReactSVG } from "react-svg";
 import css from "./CarsItem.module.css";
-import carPhoto from "../img/carPhoto.png";
+import carPhoto from "../../assets/img/carPhoto.png";
+import active from '../../assets/img/active.svg'
 import { Modal } from "../Modal/Modal";
 import { ModalData } from "../ModalData/ModalData";
 import {
@@ -57,29 +59,28 @@ const favCarIdx = favCarsData.findIndex(
               height="268px"
             />
           )}
-          <button type="button" onClick={handleFavBtn}>
-            Add to Favotite
-          </button>
+          <div>
+            <ReactSVG src="active" onClick={handleFavBtn} />
+          </div>
         </div>
 
-        <div >
-          <p >{car.make}</p>
-          <p >{car.model}</p>
-          <p >{car.year}</p>
-          <p >{car.rentalPrice}</p>
+        <div>
+          <p>{car.make}</p>
+          <p>{car.model}</p>
+          <p>{car.year}</p>
+          <p>{car.rentalPrice}</p>
         </div>
         <div>
-          <p >{car.adress}</p>
-          <p >{car.rentalCompany}</p>
-          <p >{car.type}</p>
-          <p >{car.model}</p>
-          <p >{car.mileage}</p>
-          <p >
-            {car.functionalities[0]}
-          </p>
+          <p>{car.adress}</p>
+          <p>{car.rentalCompany}</p>
+          <p>{car.type}</p>
+          <p>{car.model}</p>
+          <p>{car.mileage}</p>
+          <p>{car.functionalities[0]}</p>
         </div>
 
         <button
+          className={css.carsItemBtn}
           type="button"
           onClick={() => {
             handleModalClick();

@@ -146,3 +146,18 @@ code {
     font-weight: 500;
     line-height: 20px; */
 }
+
+body::-webkit-scrollbar {
+  width: 12px;
+  /* ширина всей полосы прокрутки */
+}
+
+
+body::-webkit-scrollbar-thumb {
+  background-color: #1214170D;
+  /* цвет бегунка */
+  border-radius: 10px;
+  /* округлось бегунка */
+width: 8px;
+  /* отступ вокруг бегунка */
+}

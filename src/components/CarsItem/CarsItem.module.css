@@ -1,0 +1,17 @@
+
+.carsItemBtn{
+    width: 100%;
+        font-family: inherit;
+        border-radius: 12px;
+        background: #3470FF;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 14px 44px;
+        border: none;
+    }
+
+    .carsItemBtn:hover {
+        background: #0B44CD;
+
+    }

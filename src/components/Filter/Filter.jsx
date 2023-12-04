@@ -59,11 +59,23 @@ const styles = {
   }),
   menu: (baseStyles) => ({
     ...baseStyles,
-    color: "#121417",
-    fontSize: "18px",
+    color: "rgba(18, 20, 23, 0.20)",
+    lineHeight: "20px",
+    fontSize: "16px",
     fontWeight: 500,
     width: "224px",
     borderRadius: "14px",
+    padding: "8px"
+  }),
+  menuList: (baseStyles) => ({
+    ...baseStyles,
+    "&::-webkit-scrollbar": {
+      width: "8px",
+        },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(18, 20, 23, 0.08)",
+      borderRadius: "10px",
+    },
   }),
 };
 
@@ -154,8 +166,10 @@ const styles = {
               }
             />
           </div>
+          <button className={css.filterBtn}  type="submit">
+            Search
+          </button>
         </div>
-        <button type="submit">Search</button>
       </form>
     </>
   );

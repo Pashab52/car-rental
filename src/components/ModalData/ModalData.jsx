@@ -1,5 +1,5 @@
 import css from "./ModalData.module.css";
-import carPhoto from "../img/carPhoto.png";
+import carPhoto from "../../assets/img/carPhoto.png";
 
 
 
