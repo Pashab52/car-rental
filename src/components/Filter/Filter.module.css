@@ -1,6 +1,7 @@
 
 .filterForm{
     margin-bottom: 50px;
+    
 }
 
 .filterSelect{
@@ -22,3 +23,12 @@
 }
 
 
+.filterSelectsWrapper{
+    display: flex;
+}
+.filterLabel{
+    color: #8A8A89;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}

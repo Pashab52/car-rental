@@ -54,6 +54,8 @@ const styles = {
     color: "#121417",
     fontSize: "18px",
     fontWeight: 500,
+    padding: "0",
+    margin: "0",
   }),
   menu: (baseStyles) => ({
     ...baseStyles,
@@ -107,44 +109,52 @@ const styles = {
           </select>
         </label> */}
 
-        <p>Car brand</p>
-        {/* <div className={css.filterSelect}> */}
-        <Select
-          styles={styles}
-          name="makers"
-          placeholder="Enter the text"
-          isSearchable={isSearchable}
-          isClearable={isClearable}
-          options={makers}
-          onChange={(event) =>
-            event ? setMaker(event.value) : setMaker("")
-          }
-        />
-        {/* </div> */}
+        <div className={css.filterSelectsWrapper}>
+          <div>
+            <p className={css.filterLabel}>Car brand</p>
+            <Select
+              styles={styles}
+              name="makers"
+              placeholder="Enter the text"
+              isSearchable={isSearchable}
+              isClearable={isClearable}
+              options={makers}
+              onChange={(event) =>
+                event ? setMaker(event.value) : setMaker("")
+              }
+            />
+          </div>
 
-        <p>Car brand</p>
-        <Select
-          styles={{...styles, control: (baseStyles, state) => ({
-              ...baseStyles,
-              border: "none",
-              backgroundColor: "#F7F7FB",
-              width: "130px",
-              borderRadius: "14px",
-              color: "#121417",
-              fontSize: "18px",
-              fontWeight: 500,
-              padding: "6px 10px 6px 18px",
-            })}}
-          name="price"
-          placeholder="To $"
-          isSearchable={false}
-          isClearable={isClearable}
-          options={prices}
-          onChange={(event) =>
-            event ? setPrice(event.value) : setPrice("500")
-          }
-        />
-
+          <div>
+            <p className={css.filterLabel}>Price/ 1 hour</p>
+            <Select
+              styles={{
+                ...styles,
+                control: (baseStyles, state) => ({
+                  ...baseStyles,
+                  border: "none",
+                  backgroundColor: "#F7F7FB",
+                  minWidth: "125px",
+                  borderRadius: "14px",
+                  color: "#121417",
+                  fontSize: "18px",
+                  fontWeight: 500,
+                  padding: "13px 18px 14px 18px",
+                }),
+              }}
+              name="price"
+              placeholder="To $"
+              isSearchable={false}
+              isClearable={isClearable}
+              options={prices}
+              onChange={(event) =>
+                event
+                  ? setPrice(event.value)
+                  : setPrice("500")
+              }
+            />
+          </div>
+        </div>
         <button type="submit">Search</button>
       </form>
     </>
