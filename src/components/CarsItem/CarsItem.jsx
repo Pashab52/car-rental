@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { ReactSVG } from "react-svg";
 import css from "./CarsItem.module.css";
-import carPhoto from "../../assets/img/carPhoto.png";
+import carPhoto from "../../assets/img/carPhoto2.png";
 import active from '../../assets/img/active.svg'
 import normal from "../../assets/img/normal.svg";
 import { Modal } from "../Modal/Modal";
@@ -27,7 +27,16 @@ export function CarsItem({ car }) {
 
     const isFavorite = favCarsData.find((favCar) => favCar.id === car.id);
 
-    
+  const addressToShow = car.address.split(",").slice(1,3);
+  console.log(addressToShow)
+//  <p>{addressToShow}</p>
+//           <p>{car.rentalCompany}</p>
+//           <p>{car.type}</p>
+//           <p>{car.model}</p>
+//           <p>{car.mileage}</p>
+//           <p>{car.functionalities[0]}</p>
+  const descriptionToShow = `${addressToShow[0] | addressToShow[1] | car.rentalCompany}`;
+    console.log(descriptionToShow);
   const handleFavBtn = () => {
     if (
       !favCarsData.find((favCar) => favCar.id === car.id)
@@ -48,7 +57,7 @@ export function CarsItem({ car }) {
         <div className={css.carstImgWrap}>
           {car.img ? (
             <img
-                          
+              className={css.carstImg}
               src={car.img}
               onError={(event) =>
                 (event.target.src = carPhoto)
@@ -72,19 +81,17 @@ export function CarsItem({ car }) {
           />
         </div>
 
-        <div>
-          <p>{car.make}</p>
-          <p>{car.model}</p>
-          <p>{car.year}</p>
-          <p>{car.rentalPrice}</p>
+        <div className={css.carTitleWrap}>
+          <p className={css.carTxt}>{car.make}</p>
+          <p className={css.carTxt}>{car.model},</p>
+          <p className={css.carTxt}>{car.year}</p>
+          <p className={css.carTxt}>{car.rentalPrice}</p>
         </div>
         <div>
-          <p>{car.adress}</p>
+          <p>{`${addressToShow[0]}  | 
+            ${addressToShow[1]}  | 
+            ${car.rentalCompany}`}</p>
           <p>{car.rentalCompany}</p>
-          <p>{car.type}</p>
-          <p>{car.model}</p>
-          <p>{car.mileage}</p>
-          <p>{car.functionalities[0]}</p>
         </div>
 
         <button

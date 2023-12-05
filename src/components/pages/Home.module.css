@@ -10,6 +10,7 @@
     background-position: center;
     background-size: cover;
     position: relative;
+    align-items: center;
 }
 
 .homeTxtWrap{
@@ -38,10 +39,8 @@
     top: 20px;
     left: 760px;
     font-size: 14px;
-   
 }
 
 .homeBtn:hover {
 background: #0B44CD;
-
 }
