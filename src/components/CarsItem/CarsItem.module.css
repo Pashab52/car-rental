@@ -15,3 +15,12 @@
         background: #0B44CD;
 
     }
+
+.carstImgWrap{
+    position: relative;
+}
+
+    .carsSvg{
+position: absolute;
+top: 0;
+        }

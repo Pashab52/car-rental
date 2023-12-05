@@ -4,6 +4,7 @@ import { ReactSVG } from "react-svg";
 import css from "./CarsItem.module.css";
 import carPhoto from "../../assets/img/carPhoto.png";
 import active from '../../assets/img/active.svg'
+import normal from "../../assets/img/normal.svg";
 import { Modal } from "../Modal/Modal";
 import { ModalData } from "../ModalData/ModalData";
 import {
@@ -24,14 +25,18 @@ export function CarsItem({ car }) {
     setShowModal(false);
   };
 
+    const isFavorite = favCarsData.find((favCar) => favCar.id === car.id);
+
+    
   const handleFavBtn = () => {
     if (
       !favCarsData.find((favCar) => favCar.id === car.id)
     ) {
       dispatch(addFavorite(car));
       return;
-    }
-const favCarIdx = favCarsData.findIndex(
+      }
+      
+    const favCarIdx = favCarsData.findIndex(
   (favorite) => favorite.id === car.id
     );
     dispatch(delFavorite(favCarIdx));
@@ -39,10 +44,11 @@ const favCarIdx = favCarsData.findIndex(
 
   return (
     <>
-      <li className={css.contactItem}>
-        <div>
+      <li className={css.carstItem}>
+        <div className={css.carstImgWrap}>
           {car.img ? (
             <img
+                          
               src={car.img}
               onError={(event) =>
                 (event.target.src = carPhoto)
@@ -59,9 +65,11 @@ const favCarIdx = favCarsData.findIndex(
               height="268px"
             />
           )}
-          <div>
-            <ReactSVG src="active" onClick={handleFavBtn} />
-          </div>
+          <ReactSVG
+            className={css.carsSvg}
+            src={isFavorite ? active : normal}
+            onClick={handleFavBtn}
+          />
         </div>
 
         <div>
