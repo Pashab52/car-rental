@@ -1,18 +1,20 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { ReactSVG } from "react-svg";
 import css from "./FavCarsItem.module.css";
-import carPhoto from "../../assets/img/carPhoto.png";
+import carPhoto from "../../assets/img/carPhoto2.png";
+import active from "../../assets/img/active.svg";
+import vector from "../../assets/img/vector.svg";
 import { Modal } from "../Modal/Modal";
 import { ModalData } from "../ModalData/ModalData";
 import {
-  addFavorite,
   delFavorite,
-} from "../../redux/carsSlice"; 
-import {selectFavCars} from '../../redux/selectors'
+} from "../../redux/carsSlice";
+import { selectFavCars } from "../../redux/selectors";
 
 export function FavCarsItem({ car }) {
-    const dispatch = useDispatch();
-    const favCarsData = useSelector(selectFavCars);
+  const dispatch = useDispatch();
+  const favCarsData = useSelector(selectFavCars);
   const [showModal, setShowModal] = useState(false);
   const handleModalClick = () => {
     setShowModal(true);
@@ -20,23 +22,25 @@ export function FavCarsItem({ car }) {
 
   const closeModal = () => {
     setShowModal(false);
-    };
+  };
 
-      const handleFavBtn = () => {
-          if (!favCarsData.includes(car)) {
-              dispatch(addFavorite(car))
-              return
-          }
-      dispatch(delFavorite(car));
-    };
-    
+  const addressToShow = car.address.split(", ").slice(1, 3);
+
+  const handleFavBtn = () => {
+ 
+    const favCarIdx = favCarsData.findIndex(
+      (favorite) => favorite.id === car.id
+    );
+    dispatch(delFavorite(favCarIdx));
+  };
+
   return (
     <>
-      <li className={css.contactItem}>
-        <div className="movie-search-poster-wrap">
+      <li className={css.carstItem}>
+        <div className={css.carstImgWrap}>
           {car.img ? (
             <img
-              className="movie-search-poster"
+              className={css.carstImg}
               src={car.img}
               onError={(event) =>
                 (event.target.src = carPhoto)
@@ -47,36 +51,69 @@ export function FavCarsItem({ car }) {
             />
           ) : (
             <img
-              className="movie-search-poster"
               src={carPhoto}
               alt={car.model}
               width="274px"
               height="268px"
             />
           )}
-          <button type="button" onClick={handleFavBtn}>
-            Add to Favotite
-          </button>
+          <ReactSVG
+            className={css.carsSvg}
+            src={active}
+            onClick={handleFavBtn}
+          />
         </div>
 
-        <div className="movie-txt-wrap">
-          <p className="movie-txt">{car.make}</p>
-          <p className="movie-txt">{car.model}</p>
-          <p className="movie-txt">{car.year}</p>
-          <p className="movie-txt">{car.rentalPrice}</p>
+        <div className={css.carTitleWrap}>
+          <p className={css.carTxt}>{car.make}</p>
+          <p className={css.carTxt}>{car.model},</p>
+          <p className={css.carTxt}>{car.year}</p>
+          <p className={css.carTxt}>{car.rentalPrice}</p>
         </div>
-        <div>
-          <p className="movie-txt">{car.adress}</p>
-          <p className="movie-txt">{car.rentalCompany}</p>
-          <p className="movie-txt">{car.type}</p>
-          <p className="movie-txt">{car.model}</p>
-          <p className="movie-txt">{car.mileage}</p>
-          <p className="movie-txt">
+        <div className={css.carDesWrap}>
+          <p className={css.carDesTxt}>
+            {addressToShow[0]}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>
+            {addressToShow[1]}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>
+            {car.rentalCompany}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>{car.type}</p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>{car.model}</p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>{car.mileage}</p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>
             {car.functionalities[0]}
           </p>
         </div>
 
         <button
+          className={css.carsItemBtn}
           type="button"
           onClick={() => {
             handleModalClick();

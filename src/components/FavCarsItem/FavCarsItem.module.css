@@ -1,0 +1,91 @@
+.carstItem {
+    max-width: 274px;
+    height: 426px;
+    display: flex;
+    flex-direction: column;
+}
+
+.carsItemBtn {
+    width: 100%;
+    font-family: inherit;
+    border-radius: 12px;
+    background: #3470FF;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 14px 44px;
+    border: none;
+    margin-top: auto;
+
+}
+
+.carsItemBtn:hover {
+    background: #0B44CD;
+
+}
+
+.carstImgWrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+
+
+}
+
+.carstImg {
+    object-fit: cover;
+}
+
+
+.carsSvg {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+}
+
+.carsSvg:hover {
+    transform: scale(1.1);
+}
+
+.carsSvg:active {
+    transform: scale(1.4);
+}
+
+.carTitleWrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.carTxt {
+    color: #121417;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-right: 0.2rem;
+}
+
+.carTxt:nth-child(2) {
+    color: #3470FF;
+}
+
+.carTxt:nth-child(4) {
+    margin-left: auto;
+}
+
+.carDesWrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.carDesSvg {
+    margin-right: 6px;
+}
+
+.carDesTxt {
+    margin-right: 6px;
+    color: rgba(18, 20, 23, 0.50);
+}

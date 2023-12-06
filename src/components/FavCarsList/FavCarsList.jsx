@@ -14,16 +14,19 @@ export function FavCarsList() {
 
   return (
     <>
-      {favCarsData.length > 0 ?
-      (isLoading ? (
-        <Loader />
+      {favCarsData.length > 0 ? (
+        isLoading ? (
+          <Loader />
+        ) : (
+          <ul className={css.carsList}>
+            {favCarsData.map((car) => {
+              return <FavCarsItem key={car.id} car={car} />;
+            })}
+          </ul>
+        )
       ) : (
-        <ul className={css.carsList}>
-          {favCarsData.map((car) => {
-            return <FavCarsItem key={car.id} car={car} />;
-          })}
-        </ul>
-      )) : <p>No car in favorite</p>}
+        <p className={css.carTxt}>No car in favorite</p>
+      )}
     </>
   );
 }

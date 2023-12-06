@@ -11,6 +11,7 @@
     background-size: cover;
     position: relative;
     align-items: center;
+    border-radius: 5px;
 }
 
 .homeTxtWrap{

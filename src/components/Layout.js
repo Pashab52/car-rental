@@ -8,7 +8,16 @@ const Layout = () => {
     <>
       <Header />
       <main>
-        <Suspense fallback={<Loader />}>
+        <Suspense
+          fallback={
+            <Loader
+              styles={{
+              
+                
+              }}
+            />
+          }
+        >
           <Outlet />
         </Suspense>
       </main>

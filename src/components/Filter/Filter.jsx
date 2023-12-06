@@ -152,6 +152,7 @@ const styles = {
                   fontSize: "18px",
                   fontWeight: 500,
                   padding: "13px 18px 14px 18px",
+                  
                 }),
               }}
               name="price"

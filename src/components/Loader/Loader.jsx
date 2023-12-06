@@ -10,7 +10,10 @@ export function Loader() {
           height="80"
           width="80"
           ariaLabel="MagnifyingGlass-loading"
-          wrapperStyle={{}}
+          wrapperStyle={{
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
           wrapperClass="MagnifyingGlass-wrapper"
           glassColor="#c0efff"
           color="#3f51b5"

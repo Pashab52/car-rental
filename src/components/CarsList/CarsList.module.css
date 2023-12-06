@@ -1,11 +1,23 @@
-
-.carsList{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 29px;
-    row-gap: 50px;
-    margin-bottom: 30px;
+.carsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px;
+  row-gap: 50px;
+  margin-bottom: 30px;
 }
-.carsLoadBtn{
-    margin-bottom: 50px;
+.carsLoadBtn {
+  margin-bottom: 50px;
+  background-color: transparent;
+  border: none;
+  color: #3470ff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration-line: underline;
+}
+
+.carsLoadBtnWrap {
+  display: flex;
+  justify-content: center;
 }

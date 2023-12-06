@@ -5,6 +5,7 @@ import css from "./CarsItem.module.css";
 import carPhoto from "../../assets/img/carPhoto2.png";
 import active from '../../assets/img/active.svg'
 import normal from "../../assets/img/normal.svg";
+import vector from "../../assets/img/vector.svg";
 import { Modal } from "../Modal/Modal";
 import { ModalData } from "../ModalData/ModalData";
 import {
@@ -27,23 +28,13 @@ export function CarsItem({ car }) {
 
     const isFavorite = favCarsData.find((favCar) => favCar.id === car.id);
 
-  const addressToShow = car.address.split(",").slice(1,3);
-  console.log(addressToShow)
-//  <p>{addressToShow}</p>
-//           <p>{car.rentalCompany}</p>
-//           <p>{car.type}</p>
-//           <p>{car.model}</p>
-//           <p>{car.mileage}</p>
-//           <p>{car.functionalities[0]}</p>
-  const descriptionToShow = `${addressToShow[0] | addressToShow[1] | car.rentalCompany}`;
-    console.log(descriptionToShow);
+  const addressToShow = car.address.split(", ").slice(1,3);
+
   const handleFavBtn = () => {
-    if (
-      !favCarsData.find((favCar) => favCar.id === car.id)
-    ) {
+    if (!isFavorite) {
       dispatch(addFavorite(car));
       return;
-      }
+    }
       
     const favCarIdx = favCarsData.findIndex(
   (favorite) => favorite.id === car.id
@@ -87,11 +78,46 @@ export function CarsItem({ car }) {
           <p className={css.carTxt}>{car.year}</p>
           <p className={css.carTxt}>{car.rentalPrice}</p>
         </div>
-        <div>
-          <p>{`${addressToShow[0]}  | 
-            ${addressToShow[1]}  | 
-            ${car.rentalCompany}`}</p>
-          <p>{car.rentalCompany}</p>
+        <div className={css.carDesWrap}>
+          <p className={css.carDesTxt}>
+            {addressToShow[0]}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>
+            {addressToShow[1]}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>
+            {car.rentalCompany}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>{car.type}</p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>{car.model}</p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>{car.mileage}</p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+          <p className={css.carDesTxt}>
+            {car.functionalities[0]}
+          </p>
         </div>
 
         <button

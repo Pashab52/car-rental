@@ -1,4 +1,3 @@
-
 import { CarsItem } from "../CarsItem/CarsItem";
 import css from "./CarsList.module.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -19,7 +18,7 @@ export function CarsList() {
   const [carsDataLength, setCarsDataLength] = useState(0);
   const [currentPage, setCurrentPage] = useState(2);
   const dispatch = useDispatch();
-  
+
   function onBtnClick() {
     setCurrentPage(currentPage + 1);
     setCarsDataLength(carsData.length);
@@ -33,20 +32,22 @@ export function CarsList() {
           return <CarsItem key={car.id} car={car} />;
         })}
       </ul>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <button
-          className={css.carsLoadBtn}
-          type="button"
-          onClick={() => {
-            onBtnClick();
-          }}
-          disabled={carsData.length < 12}
-        >
-          Load more
-        </button>
-      )}
+      <div className={css.carsLoadBtnWrap}>
+        {isLoading ? (
+          <Loader />
+        ) : ( carsData.length !== carsDataLength &&
+          <button
+            className={css.carsLoadBtn}
+            type="button"
+            onClick={() => {
+              onBtnClick();
+            }}
+            disabled={carsData.length === carsDataLength}
+          >
+            Load more
+          </button>
+        )}
+      </div>
     </>
   );
 }

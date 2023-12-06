@@ -1,3 +1,9 @@
+.carstItem{
+    max-width: 274px;
+    height: 426px;
+    display: flex;
+    flex-direction: column;
+}
 
 .carsItemBtn{
     width: 100%;
@@ -9,6 +15,8 @@
         font-weight: 600;
         padding: 14px 44px;
         border: none;
+        margin-top: auto;
+    
     }
 
     .carsItemBtn:hover {
@@ -21,6 +29,7 @@
     border-radius: 12px;
     overflow: hidden;
    margin-bottom: 14px;
+
 
 }
 
@@ -45,6 +54,7 @@ cursor: pointer;
                
 .carTitleWrap{
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 8px;
 }
 
@@ -53,7 +63,7 @@ cursor: pointer;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-margin-right: 0.3rem;
+margin-right: 0.2rem;
 }
 
 .carTxt:nth-child(2) {
@@ -62,4 +72,19 @@ margin-right: 0.3rem;
 
 .carTxt:nth-child(4){
     margin-left: auto;
+}
+
+.carDesWrap{
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.carDesSvg{
+    margin-right: 6px;
+}
+
+.carDesTxt{
+    margin-right: 6px;
+    color: rgba(18, 20, 23, 0.50);
 }
