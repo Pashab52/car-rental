@@ -7,9 +7,15 @@ import x from "../../assets/img/x.svg";
 export function ModalData({ car, onModalClose }) {
   const addressToShow = car.address.split(", ").slice(1, 3);
 
+  const rentalConditions = car.rentalConditions.split('\n').slice(0, 1);
+  console.log(rentalConditions)
+
+  const renCondAge = rentalConditions;
+
+
+
   return (
     <div className={css.modalWrrapper}>
-
       <ReactSVG
         className={css.modalCloseBtn}
         src={x}
@@ -37,43 +43,123 @@ export function ModalData({ car, onModalClose }) {
           />
         )}
       </div>
-      <div className={css.carTitleWrap}>
-        <p className={css.carTxt}>{car.make}</p>
-        <p className={css.carTxt}>{car.model},</p>
-        <p className={css.carTxt}>{car.year}</p>
-      </div>
+      <ul className={css.carTitleWrap}>
+        <li className={css.carTxt}>{car.make}</li>
+        <li className={css.carTxt}>{car.model},</li>
+        <li className={css.carTxt}>{car.year}</li>
+      </ul>
 
-      <div className={css.carDesWrap}>
-        <p className={css.carDesTxt}>{addressToShow[0]}</p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>{addressToShow[1]}</p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>
-          <span>Id: </span>
-          {car.id}
-        </p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>
-          <span>Year: </span>
-          {car.year}
-        </p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>
-          <span>Type: </span>
-          {car.type}
-        </p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>
-          <span>Fuel Consumption: </span>
-          {car.fuelConsumption}
-        </p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>{car.mileage}</p>
-        <ReactSVG className={css.carDesSvg} src={vector} />
-        <p className={css.carDesTxt}>
-          {car.functionalities[0]}
-        </p>
-      </div>
+      <ul className={css.carDesWrap}>
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            {addressToShow[0]}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+        </li>
+
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            {addressToShow[1]}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+        </li>
+
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            <span>Id: </span>
+            {car.id}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+        </li>
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            <span>Year: </span>
+            {car.year}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+        </li>
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            <span>Type: </span>
+            {car.type}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+        </li>
+
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            <span>Fuel Consumption: </span>
+            {car.fuelConsumption}
+          </p>
+          <ReactSVG
+            className={css.carDesSvg}
+            src={vector}
+          />
+        </li>
+        <li className={css.carDesItem}>
+          <p className={css.carDesTxt}>
+            <span>Engine Size: </span> {car.engineSize}
+          </p>
+        </li>
+      </ul>
+
+      <p className={css.carDescription}>
+        {car.description}
+      </p>
+
+      <p className={css.carModalTitles}>
+        Accessories and functionalities:
+      </p>
+
+      <ul className={css.carDesWrap}>
+        {car.accessories.map((item, index) => 
+          
+          <li className={css.carDesItem} key={index}>
+            <p className={css.carDesTxt}>{item}</p>
+            <ReactSVG
+              className={css.carDesSvg}
+              src={vector}
+            />
+          </li>
+        )}
+        {car.functionalities.map((item, index) => (
+          <li className={css.carDesItem} key={index}>
+            <p className={css.carDesTxt}>{item}</p>
+            <ReactSVG
+              className={css.carDesSvg}
+              src={vector}
+            />
+          </li>
+        ))}
+      </ul>
+      <p className={css.carModalTitles}>
+        Rental Conditions:
+      </p>
+
+      <ul className={css.carDesItem}>
+        {rentalConditions.map((item, index) => (
+          <li className={css.rentalConditions} key={index}>
+            {item}
+          </li>
+        ))}
+        <li className={css.rentalConditions}></li>
+        <li className={css.rentalConditions}></li>
+      </ul>
     </div>
   );
 }

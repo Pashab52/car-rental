@@ -3,10 +3,7 @@
     top: 16px;
     right: 16px;
     cursor: pointer;
-    /* padding: 3px 3px; */
-
-    /* transition: transform; */
-transition: transform ease-in 400ms;
+    transition: transform ease-in 400ms;
 }
 
 .modalCloseBtn:hover {
@@ -29,7 +26,7 @@ transform: rotate(180deg);
 .carDesWrap {
     display: flex;
     flex-wrap: wrap;
-    /* flex-direction: column; */
+   margin-bottom: 14px;
 }
 
 .carDesSvg {
@@ -41,11 +38,6 @@ transform: rotate(180deg);
     color: rgba(18, 20, 23, 0.50);
 }
 
-
-/* .modalWrrapper{
-    padding: 35px;
-} */
-
 .carTitleWrap {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +45,6 @@ transform: rotate(180deg);
 }
 
 .carTxt {
-    color: #121417;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
@@ -64,9 +55,32 @@ transform: rotate(180deg);
     color: #3470FF;
 }
 
+.carDescription{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 24px;
+}
 
+.carModalTitles{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 8px;
+}
 
+.carDesItem{
+    display: flex;
+}
 
+.rentalConditions{
+    color: #363535;
+    
+        font-family: Montserrat;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: -0.24px;
+}
 
 /* .image {
     border-radius: 14px;
