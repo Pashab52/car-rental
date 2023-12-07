@@ -1,5 +1,74 @@
+.modalCloseBtn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    /* padding: 3px 3px; */
 
-.image {
+    /* transition: transform; */
+transition: transform ease-in 400ms;
+}
+
+.modalCloseBtn:hover {
+transform: rotate(180deg);
+        }
+
+
+
+.modalImg {
+    object-fit: cover;
+}
+
+.modalImgWrap {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.carDesWrap {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+}
+
+.carDesSvg {
+    margin-right: 6px;
+}
+
+.carDesTxt {
+    margin-right: 6px;
+    color: rgba(18, 20, 23, 0.50);
+}
+
+
+/* .modalWrrapper{
+    padding: 35px;
+} */
+
+.carTitleWrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+}
+
+.carTxt {
+    color: #121417;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-right: 0.2rem;
+}
+
+.carTxt:nth-child(2) {
+    color: #3470FF;
+}
+
+
+
+
+
+/* .image {
     border-radius: 14px;
     object-fit: cover;
 }
@@ -120,4 +189,4 @@
     padding: 12px 50px;
     margin-top: 24px;
     text-align: center;
-}
+} */

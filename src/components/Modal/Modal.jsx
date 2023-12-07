@@ -1,6 +1,5 @@
 import { createPortal } from 'react-dom';
 import { useEffect } from 'react';
-import PropTypes from 'prop-types';
 import css from './Modal.module.css'
 
 export function Modal (props) {

@@ -44,11 +44,11 @@ export function CarsItem({ car }) {
 
   return (
     <>
-      <li className={css.carstItem}>
-        <div className={css.carstImgWrap}>
+      <li className={css.carsItem}>
+        <div className={css.carsImgWrap}>
           {car.img ? (
             <img
-              className={css.carstImg}
+              className={css.carsImg}
               src={car.img}
               onError={(event) =>
                 (event.target.src = carPhoto)

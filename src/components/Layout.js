@@ -10,12 +10,7 @@ const Layout = () => {
       <main>
         <Suspense
           fallback={
-            <Loader
-              styles={{
-              
-                
-              }}
-            />
+            <Loader />
           }
         >
           <Outlet />

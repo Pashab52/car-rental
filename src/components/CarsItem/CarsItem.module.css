@@ -1,4 +1,4 @@
-.carstItem{
+.carsItem{
     max-width: 274px;
     height: 426px;
     display: flex;
@@ -24,7 +24,7 @@
 
     }
 
-.carstImgWrap{
+.carsImgWrap{
     position: relative;
     border-radius: 12px;
     overflow: hidden;
