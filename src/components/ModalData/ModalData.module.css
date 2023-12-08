@@ -71,17 +71,23 @@ transform: rotate(180deg);
 
 .carDesItem{
     display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .rentalConditions{
     color: #363535;
-    
-        font-family: Montserrat;
-        font-weight: 400;
-        line-height: 18px;
-        letter-spacing: -0.24px;
+    padding: 7px 14px;
+    width: max-content;
+    font-weight: 400;
+    line-height: 18px;
+    border-radius: 35px;
+    background: #F9F9F9;
 }
 
+.ageColor{
+    color: #3470FF;
+}
 /* .image {
     border-radius: 14px;
     object-fit: cover;

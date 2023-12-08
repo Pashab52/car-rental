@@ -7,13 +7,20 @@ import x from "../../assets/img/x.svg";
 export function ModalData({ car, onModalClose }) {
   const addressToShow = car.address.split(", ").slice(1, 3);
 
-  const rentalConditions = car.rentalConditions.split('\n').slice(0, 1);
-  console.log(rentalConditions)
+  const renCondAge = car.rentalConditions
+    .split("\n")
+    .slice(0, 1);
+  const renCondAgeArr = renCondAge[0].split(":");
 
-  const renCondAge = rentalConditions;
+  const rentalConditions = car.rentalConditions
+    .split("\n")
+    .slice(1);
 
+  const mileage = (car.mileage / 1000)
+    .toString()
+    .replace(".", ",");
 
-
+  
   return (
     <div className={css.modalWrrapper}>
       <ReactSVG
@@ -127,8 +134,7 @@ export function ModalData({ car, onModalClose }) {
       </p>
 
       <ul className={css.carDesWrap}>
-        {car.accessories.map((item, index) => 
-          
+        {car.accessories.map((item, index) => (
           <li className={css.carDesItem} key={index}>
             <p className={css.carDesTxt}>{item}</p>
             <ReactSVG
@@ -136,7 +142,7 @@ export function ModalData({ car, onModalClose }) {
               src={vector}
             />
           </li>
-        )}
+        ))}
         {car.functionalities.map((item, index) => (
           <li className={css.carDesItem} key={index}>
             <p className={css.carDesTxt}>{item}</p>
@@ -152,18 +158,28 @@ export function ModalData({ car, onModalClose }) {
       </p>
 
       <ul className={css.carDesItem}>
+        <li className={css.rentalConditions}>
+          {renCondAgeArr[0]}:
+          <span className={css.ageColor}>
+            {renCondAgeArr[1]}
+          </span>
+        </li>
         {rentalConditions.map((item, index) => (
           <li className={css.rentalConditions} key={index}>
             {item}
           </li>
         ))}
-        <li className={css.rentalConditions}></li>
-        <li className={css.rentalConditions}></li>
+        <li className={css.rentalConditions}>
+          Mileage:{" "}
+          <span className={css.ageColor}>{mileage}</span>
+        </li>
+        <li className={css.rentalConditions}>
+          :<span className={css.ageColor}></span>
+        </li>
       </ul>
     </div>
   );
 }
-
 
 // export function ModalData({ car }) {
 //   const {
