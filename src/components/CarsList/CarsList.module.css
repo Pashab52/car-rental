@@ -17,6 +17,11 @@
   text-decoration-line: underline;
 }
 
+.carsLoadBtn:hover {
+  color: #0B44CD;
+
+}
+
 .carsLoadBtnWrap {
   display: flex;
   justify-content: center;

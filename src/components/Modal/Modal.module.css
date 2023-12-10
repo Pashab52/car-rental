@@ -1,14 +1,15 @@
+
 .modal {
     background-color: #FFFFFF;
     max-width: 541px;
  
-    margin-top: 100px;
+    /* margin-top: 100px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    /* top: 40%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -19,12 +20,10 @@
     padding: 35px;
     box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4), 0 28px 30px rgba(0, 0, 0, 0.3);
 
-    /* max-width: calc(100vw - 48px);
-    max-height: calc(100vh - 24px); */
-
 }
 
-.overlay {
+
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -33,15 +32,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(18, 20, 23, 0.50);
     z-index: 1200;
-
-
-    /* background-color: rgba(17, 17, 17, 0.4);
-
-
-    overflow-y: scroll;
-    z-index: 300;
-    transform: rotate(0) scale(1);
-    transition: opacity 300ms linear, visibility 300ms linear; */
 }
+
+
+

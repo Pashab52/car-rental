@@ -4,14 +4,12 @@ import css from './Modal.module.css'
 
 export function Modal (props) {
 
-  
-
   useEffect(() => {
     document.body.classList.add('modal-open');
     window.addEventListener('keydown', handleKeyDown);
 
     return () => {
-        document.body.classList.remove('modal-open');
+      document.body.classList.remove('modal-open');
       window.removeEventListener('keydown', handleKeyDown);
     }
   })
@@ -31,7 +29,10 @@ export function Modal (props) {
   const modalRoot = document.querySelector('#modal-root');
 
     return createPortal(
-      <div className={css.overlay} onClick={handleOverlayClick}>
+      <div
+        className={css.backdrop}
+        onClick={handleOverlayClick}
+      >
         <div className={css.modal}>{props.children}</div>
       </div>,
       modalRoot
