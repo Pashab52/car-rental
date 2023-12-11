@@ -157,7 +157,7 @@ export function ModalData({ car, onModalClose }) {
         Rental Conditions:
       </p>
 
-      <ul className={css.carDesItem}>
+      <ul className={css.modalCondList}>
         <li className={css.rentalConditions}>
           {renCondAgeArr[0]}:
           <span className={css.ageColor}>
@@ -184,6 +184,6 @@ export function ModalData({ car, onModalClose }) {
       >
         Rental car
       </a>
-         </div>
+    </div>
   );
 }

@@ -68,7 +68,7 @@ transform: rotate(180deg);
     margin-bottom: 8px;
 }
 
-.carDesItem{
+.carDesItem {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 4px;
@@ -82,6 +82,13 @@ transform: rotate(180deg);
     line-height: 18px;
     border-radius: 35px;
     background: #F9F9F9;
+}
+
+.modalCondList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
 }
 
 .ageColor{
