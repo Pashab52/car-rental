@@ -132,6 +132,8 @@ width: 8px;
   /* отступ вокруг бегунка */
 }
 
-
-
+.alert-txt{
+  margin-top: 200px;
+  text-align: center;
+}
 
