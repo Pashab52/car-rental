@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkcar_rental=self.webpackChunkcar_rental||[]).push([[370],{1370:(e,a,s)=>{s.r(a),s.d(a,{default:()=>o});var t=s(1087);const n="Home_homeContainer__CiLe-",c="Home_homeTxt__M7I3x",r="Home_homeBtn__jlTLx";var l=s(184);const o=()=>(0,l.jsxs)("div",{className:n,children:[(0,l.jsx)("p",{className:c,children:"Hello! On this site you can find a car that suits you and rent it!"}),(0,l.jsx)(t.rU,{className:r,to:"catalog",children:"Rent a car"})]})}}]);
-//# sourceMappingURL=370.31fde169.chunk.js.map
