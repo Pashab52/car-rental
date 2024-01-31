@@ -2,7 +2,7 @@
   "name": "car-rental",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pashab52.github.io/car-rental/",
+  "homepage": "https://pashab52.github.io/car-rental/home",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",

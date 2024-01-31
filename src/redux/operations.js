@@ -4,8 +4,9 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
 axios.defaults.baseURL =
-  "https://655937ffe93ca47020aa2450.mockapi.io/api/";
-
+  // "https://655937ffe93ca47020aa2450.mockapi.io/api/";
+  "https://655925f8e93ca47020aa18a1.mockapi.io/api/";
+  
 export const fetchCars = createAsyncThunk(
   "cars/fetchCars",
   async (page, thunkAPI) => {
